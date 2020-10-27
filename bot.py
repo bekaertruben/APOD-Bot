@@ -32,7 +32,7 @@ async def get_apod_embed(date :str):
     if apod['media_type'] == "image":
         embed.set_image(url = apod['hdurl'] if 'hdurl' in apod else apod['url'])
     elif apod['media_type'] == "video":
-        embed.video = apod['url']
+        embed.add_field(name="Video", value=apod['url'], inline=False)
     return embed
 
 
